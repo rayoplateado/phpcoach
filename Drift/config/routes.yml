@@ -2,7 +2,7 @@
 get_user:
   path: /users/{uid}
   controller: App\Controller\GetUserController
-  method: [GET]
+  methods: [GET]
 
 put_user:
   path: /users/{uid}

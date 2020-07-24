@@ -10,6 +10,11 @@ framework:
     php_errors:
         log: false
 
+command_bus:
+    command_bus:
+        middlewares:
+            - Domain\Middleware\CheckUserNameLength
+
 # config/services.yaml
 services:
     _defaults:
@@ -29,3 +34,11 @@ services:
         resource: "%app_path%/src/Domain/QueryHandler/*"
         tags: 
             - {name: "query_handler"}
+
+    Domain\CommandHandler\:
+        resource: "%app_path%/src/Domain/CommandHandler/*"
+        tags:
+            - {name: "command_handler"}
+
+    Domain\Middleware\:
+        resource: "%app_path%/src/Domain/Middleware/*"

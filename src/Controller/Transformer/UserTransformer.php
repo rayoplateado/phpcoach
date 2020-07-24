@@ -13,12 +13,12 @@ class UserTransformer
 {
     /**
      * @param array $userAsArray
-     *
+     * @param string $uid
      * @return User
      */
-    public static function fromArray(array $userAsArray) : User
+    public static function fromArray(string $uid, array $userAsArray) : User
     {
-        return new User($userAsArray['uid'], $userAsArray['name']);
+        return new User($uid, $userAsArray['name']);
     }
 
     /**

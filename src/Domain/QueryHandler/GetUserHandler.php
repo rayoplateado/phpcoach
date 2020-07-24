@@ -2,6 +2,7 @@
 
 namespace Domain\QueryHandler;
 
+use App\Domain\Model\User\UserRepository;
 use Domain\Model\User\UserNotFoundException;
 use Domain\Model\User\User;
 use Domain\Query\GetUser;
@@ -15,6 +16,18 @@ use function React\Promise\reject;
 class GetUserHandler
 {
     /**
+     * @var UserRepository
+     */
+    private $userRepository;
+    /**
+     * @param UserRepository $userRepository
+     */
+    public function __construct(UserRepository $userRepository)
+    {
+        $this->userRepository = $userRepository;
+    }
+
+    /**
      * @var GetUser $getUser
      * 
      * @return PromiseInterface<User>
@@ -24,10 +37,10 @@ class GetUserHandler
     public function handle(GetUser $getUser) : PromiseInterface
     {
         $uid = $getUser->getUid();
-        $name = 'Engonga';
-        if('10' === $uid){
-            return reject(new UserNotFoundException());
-        }
-        return resolve(new User($uid, $name));
+
+        return $this
+            ->userRepository
+            ->find($uid);
+
     }
 }

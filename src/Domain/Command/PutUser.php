@@ -4,30 +4,31 @@
 namespace App\Domain\Command;
 
 
+use Domain\Model\User\User;
+
 class PutUser
 {
-    private $uid;
-    private $name;
-    public function __construct(string $uid, string $name)
+    /**
+     * @var User $user
+     */
+
+    private $user;
+
+    /**
+     * PutUser constructor.
+     * @param User $user
+     */
+    public function __construct(User $user)
     {
-        $this->uid = $uid;
-        $this->name = $name;
+        $this->user = $user;
     }
 
     /**
-     * @return string
+     * @return User
      */
-    public function getUid(): string
+    public function getUser(): User
     {
-        return $this->uid;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return $this->name;
+        return $this->user;
     }
 
 }
