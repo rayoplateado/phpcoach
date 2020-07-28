@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Domain\Model\User;
+namespace Domain\Model\User;
 
 
 use Domain\Model\User\User;

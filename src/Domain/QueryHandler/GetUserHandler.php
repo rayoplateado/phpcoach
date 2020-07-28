@@ -2,7 +2,7 @@
 
 namespace Domain\QueryHandler;
 
-use App\Domain\Model\User\UserRepository;
+use Domain\Model\User\UserRepository;
 use Domain\Model\User\UserNotFoundException;
 use Domain\Model\User\User;
 use Domain\Query\GetUser;

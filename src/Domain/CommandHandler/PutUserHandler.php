@@ -4,8 +4,8 @@
 namespace Domain\CommandHandler;
 
 
-use App\Domain\Command\PutUser;
-use App\Domain\Model\User\UserRepository;
+use Domain\Command\PutUser;
+use Domain\Model\User\UserRepository;
 use React\Promise\PromiseInterface;
 use function React\Promise\resolve;
 

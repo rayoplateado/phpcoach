@@ -42,3 +42,7 @@ services:
 
     Domain\Middleware\:
         resource: "%app_path%/src/Domain/Middleware/*"
+
+    Domain\Model\User\InMemoryUserRepository:
+    Domain\Model\User\UserRepository:
+        alias: Domain\Model\User\InMemoryUserRepository

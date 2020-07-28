@@ -3,8 +3,8 @@
 namespace Domain\Middleware;
 
 
-use App\Domain\Command\PutUser;
-use App\Domain\Model\User\NameTooShortException;
+use Domain\Command\PutUser;
+use Domain\Model\User\NameTooShortException;
 use Drift\CommandBus\Middleware\DiscriminableMiddleware;
 use function React\Promise\reject;
 

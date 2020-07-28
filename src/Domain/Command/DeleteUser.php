@@ -6,7 +6,7 @@ namespace Domain\Command;
 
 use Domain\Model\User\User;
 
-class PutUser
+class DeleteUser
 {
     /**
      * @var User $user
@@ -26,7 +26,7 @@ class PutUser
     /**
      * @return User
      */
-    public function getUser(): User
+    public function getUid(): User
     {
         return $this->user;
     }

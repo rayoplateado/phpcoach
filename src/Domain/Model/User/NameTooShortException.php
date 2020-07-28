@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\Domain\Model\User;
+namespace Domain\Model\User;
 
 use Exception;
 
 /**
  * Class NameTooShortException
- * @package App\Domain\Model\User
+ * @package Domain\Model\User
  */
 class NameTooShortException extends Exception
 {
